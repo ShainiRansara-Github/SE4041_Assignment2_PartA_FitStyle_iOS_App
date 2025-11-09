@@ -1,0 +1,92 @@
+:root {
+  --bg: #ffffff;
+  --text: #111418;
+  --muted: #6b7280;
+  --accent: #F2A6B3; /* soft pink */
+  --accent-600: #ec95a5;
+  --border: #e5e7eb;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.app-header {
+  padding: 32px 20px 12px;
+  text-align: center;
+}
+.brand {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+}
+.tagline {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+#app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.view { display: none; }
+.view.active { display: block; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 20px rgba(17, 20, 24, 0.04);
+}
+
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.stack { display: grid; gap: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-top: 10px; }
+
+.field { display: grid; gap: 6px; }
+.field > span { font-size: 13px; color: var(--muted); }
+input, select {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.btn {
+  border: 1px solid var(--accent);
+  background: #fff;
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.btn:hover { border-color: var(--accent-600); }
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.btn.primary:hover { background: var(--accent-600); }
+.btn.ghost { background: transparent; }
+
+.muted { color: var(--muted); }
+
+.app-footer {
+  text-align: center;
+  padding: 32px 0 40px;
+  color: var(--muted);
+}

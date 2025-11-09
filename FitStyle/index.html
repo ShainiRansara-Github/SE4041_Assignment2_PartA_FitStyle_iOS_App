@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FitStyle – Smart Outfit Recommender</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 class="brand">FitStyle</h1>
+      <p class="tagline">Smart Outfit Recommender</p>
+    </header>
+
+    <main id="app">
+      <!-- Home -->
+      <section id="home" class="view active">
+        <div class="card">
+          <h2>Welcome</h2>
+          <p>Build your wardrobe, get AI outfit suggestions, and save your looks.</p>
+          <div class="actions">
+            <button class="btn" data-target="add-item">Add Item</button>
+            <button class="btn" data-target="suggestions">Outfit Suggestions</button>
+            <button class="btn" data-target="saved-looks">Saved Looks</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Item -->
+      <section id="add-item" class="view">
+        <div class="card">
+          <h2>Add Item</h2>
+          <form id="addItemForm" class="stack">
+            <label class="field">
+              <span>Item name</span>
+              <input type="text" id="itemName" placeholder="e.g., White T-Shirt" required />
+            </label>
+            <label class="field">
+              <span>Category</span>
+              <select id="itemCategory">
+                <option>Tops</option>
+                <option>Bottoms</option>
+                <option>Outerwear</option>
+                <option>Footwear</option>
+                <option>Accessories</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Color</span>
+              <input type="text" id="itemColor" placeholder="e.g., Black" />
+            </label>
+            <div class="row">
+              <button type="submit" class="btn primary">Save Item</button>
+              <button type="button" class="btn ghost" data-target="home">Back to Home</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Outfit Suggestions -->
+      <section id="suggestions" class="view">
+        <div class="card">
+          <h2>Outfit Suggestions</h2>
+          <p class="muted">AI-powered recommendations will appear here.</p>
+          <div id="suggestionsList" class="grid"></div>
+          <div class="row">
+            <button class="btn ghost" data-target="home">Back to Home</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Saved Looks -->
+      <section id="saved-looks" class="view">
+        <div class="card">
+          <h2>Saved Looks</h2>
+          <p class="muted">Your favorite outfit combinations.</p>
+          <div id="savedList" class="grid"></div>
+          <div class="row">
+            <button class="btn ghost" data-target="home">Back to Home</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>© <span id="year"></span> FitStyle</small>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
