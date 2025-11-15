@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage("didShowOnboarding") private var didShowOnboarding: Bool = false
     @State private var showSplash = true
+    @State private var splashAppeared = false
     var body: some View {
         ZStack {
             HomeView()
@@ -12,9 +13,12 @@ struct ContentView: View {
 
             if showSplash {
                 SplashView()
+                    .opacity(splashAppeared ? 1 : 0)
+                    .offset(y: splashAppeared ? 0 : 10)
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                            withAnimation(.easeInOut(duration: 0.35)) { showSplash = false }
+                        withAnimation(.easeInOut(duration: 0.4)) { splashAppeared = true }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                            withAnimation(.easeInOut(duration: 0.4)) { showSplash = false }
                         }
                     }
             }
